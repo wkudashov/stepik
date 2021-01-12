@@ -1,9 +1,6 @@
-lst = []
+with open(".txt", "r") as _input:
+    lst = _input.read().splitlines()
 
-with open(file.txt, "r") as _input:
-    for i in _input:
-        lst = _input.readline()
-
-with open(reverse.txt, "w") as _output:
-    for i in lst.reverse():
-        _output.write(i)
+with open("reverse.txt", "w") as _output:
+    for i in lst[::-1]:
+        _output.write(i+"\n")
