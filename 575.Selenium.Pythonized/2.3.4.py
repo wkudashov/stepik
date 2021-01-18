@@ -8,25 +8,23 @@ def calc(x):
 
 
 try: 
-    link = "http://suninjuly.github.io/execute_script.html"
+    link = "http://suninjuly.github.io/alert_accept.html"
     browser = webdriver.Chrome()
     browser.get(link)
-	
-    x = browser.find_element_by_id("input_value").text
-    y = calc(x)
-
-    input = browser.find_element_by_id("answer")
-    browser.execute_script("return arguments[0].scrollIntoView(true);", input)
-    input.send_keys(y)
-	
-    chkbx = browser.find_element_by_id("robotCheckbox")
-    chkbx.click()
-	
-    rbut = browser.find_element_by_css_selector("[name='ruler'][value='robots']")
-    rbut.click()
 
     button = browser.find_element_by_css_selector("button.btn")
-    browser.execute_script("return arguments[0].scrollIntoView(true);", button)
+    button.click()
+
+    conf = browser.switch_to.alert
+    conf.accept()
+
+    x = browser.find_element_by_id("input_value").text
+    y = calc(x)
+ 
+    input = browser.find_element_by_id("answer")
+    input.send_keys(y)
+	
+    button = browser.find_element_by_css_selector("button.btn")
     button.click()
 
 finally:
