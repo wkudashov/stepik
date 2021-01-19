@@ -30,7 +30,6 @@ class TestSel(unittest.TestCase):
         finally:
             print('exiting')
             browser.quit()
-		
 
     def test_reg2(self):
         try: 
@@ -58,7 +57,6 @@ class TestSel(unittest.TestCase):
         finally:
             print('exiting')
             browser.quit()
-			
 
 
 if __name__ == "__main__":

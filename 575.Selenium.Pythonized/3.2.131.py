@@ -27,7 +27,6 @@ class TestSel(unittest.TestCase):
         self.assertEqual(welcome_text, "Congratulations! You have successfully registered!", "Registration1 failed")
         print('assert отправлен')
         browser.quit()
-		
 
     def test_reg2(self):
         link = "http://suninjuly.github.io/registration2.html"
